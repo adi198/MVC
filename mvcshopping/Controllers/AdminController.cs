@@ -52,7 +52,7 @@ namespace mvcshopping.Controllers
             catch(Exception ex)
             {
 
-                ViewBag.msg = "Not Inserted..";
+                ViewBag.msg = "Not Inserted.";
             }
             return View();
         }
