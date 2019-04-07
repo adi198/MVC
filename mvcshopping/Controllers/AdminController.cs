@@ -52,14 +52,14 @@ namespace mvcshopping.Controllers
             catch(Exception ex)
             {
 
-                ViewBag.msg = "Not Inserted";
+                ViewBag.msg = "Not Inserted..";
             }
             return View();
         }
         [HttpPost]
         public ActionResult subcat(FormCollection fc)
         {
-            ViewBag.msg = "Not Inserted";
+            
             return View();
         }
     }
