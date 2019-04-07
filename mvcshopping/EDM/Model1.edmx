@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="shoppingdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbladmin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" />
+          <Property Name="password" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblcat">
+          <Key>
+            <PropertyRef Name="cat_id" />
+          </Key>
+          <Property Name="cat_id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cat_name" Type="varchar" MaxLength="50" />
+          <Property Name="cat_desc" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="tblproduct">
+          <Key>
+            <PropertyRef Name="p_id" />
+          </Key>
+          <Property Name="p_id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="p_name" Type="varchar(max)" Nullable="false" />
+          <Property Name="p_price" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="p_qty" Type="int" Nullable="false" />
+          <Property Name="cat_id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="subcat_id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="p_desc" Type="varchar(max)" Nullable="false" />
+          <Property Name="p_img_original" Type="varchar(max)" Nullable="false" />
+          <Property Name="p_img1" Type="varchar(max)" Nullable="false" />
+          <Property Name="p_img2" Type="varchar(max)" Nullable="false" />
+          <Property Name="p_status" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblsubcat">
+          <Key>
+            <PropertyRef Name="subcat_id" />
+          </Key>
+          <Property Name="subcat_id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="subcat_name" Type="varchar(max)" Nullable="false" />
+          <Property Name="cat_id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="subcat_desc" Type="varchar(max)" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="shoppingdbModelStoreContainer">
+          <EntitySet Name="tbladmin" EntityType="Self.tbladmin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblcat" EntityType="Self.tblcat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblproduct" EntityType="Self.tblproduct" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblsubcat" EntityType="Self.tblsubcat" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="shoppingdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tbladmin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblcat">
+          <Key>
+            <PropertyRef Name="cat_id" />
+          </Key>
+          <Property Name="cat_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cat_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cat_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblproduct">
+          <Key>
+            <PropertyRef Name="p_id" />
+          </Key>
+          <Property Name="p_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="p_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="p_price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="p_qty" Type="Int32" Nullable="false" />
+          <Property Name="cat_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="subcat_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="p_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="p_img_original" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="p_img1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="p_img2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="p_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblsubcat">
+          <Key>
+            <PropertyRef Name="subcat_id" />
+          </Key>
+          <Property Name="subcat_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="subcat_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cat_id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="subcat_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="shoppingdbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbladmins" EntityType="Self.tbladmin" />
+          <EntitySet Name="tblcats" EntityType="Self.tblcat" />
+          <EntitySet Name="tblproducts" EntityType="Self.tblproduct" />
+          <EntitySet Name="tblsubcats" EntityType="Self.tblsubcat" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="shoppingdbModelStoreContainer" CdmEntityContainer="shoppingdbEntities">
+          <EntitySetMapping Name="tbladmins">
+            <EntityTypeMapping TypeName="shoppingdbModel.tbladmin">
+              <MappingFragment StoreEntitySet="tbladmin">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblcats">
+            <EntityTypeMapping TypeName="shoppingdbModel.tblcat">
+              <MappingFragment StoreEntitySet="tblcat">
+                <ScalarProperty Name="cat_id" ColumnName="cat_id" />
+                <ScalarProperty Name="cat_name" ColumnName="cat_name" />
+                <ScalarProperty Name="cat_desc" ColumnName="cat_desc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblproducts">
+            <EntityTypeMapping TypeName="shoppingdbModel.tblproduct">
+              <MappingFragment StoreEntitySet="tblproduct">
+                <ScalarProperty Name="p_id" ColumnName="p_id" />
+                <ScalarProperty Name="p_name" ColumnName="p_name" />
+                <ScalarProperty Name="p_price" ColumnName="p_price" />
+                <ScalarProperty Name="p_qty" ColumnName="p_qty" />
+                <ScalarProperty Name="cat_id" ColumnName="cat_id" />
+                <ScalarProperty Name="subcat_id" ColumnName="subcat_id" />
+                <ScalarProperty Name="p_desc" ColumnName="p_desc" />
+                <ScalarProperty Name="p_img_original" ColumnName="p_img_original" />
+                <ScalarProperty Name="p_img1" ColumnName="p_img1" />
+                <ScalarProperty Name="p_img2" ColumnName="p_img2" />
+                <ScalarProperty Name="p_status" ColumnName="p_status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblsubcats">
+            <EntityTypeMapping TypeName="shoppingdbModel.tblsubcat">
+              <MappingFragment StoreEntitySet="tblsubcat">
+                <ScalarProperty Name="subcat_id" ColumnName="subcat_id" />
+                <ScalarProperty Name="subcat_name" ColumnName="subcat_name" />
+                <ScalarProperty Name="cat_id" ColumnName="cat_id" />
+                <ScalarProperty Name="subcat_desc" ColumnName="subcat_desc" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
