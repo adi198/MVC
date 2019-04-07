@@ -59,7 +59,7 @@ namespace mvcshopping.Controllers
         [HttpPost]
         public ActionResult subcat(FormCollection fc)
         {
-            ViewBag.msg = "Not Inserted";
+            
             return View();
         }
     }
