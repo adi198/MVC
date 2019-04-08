@@ -1,0 +1,37 @@
+﻿@model List <mvcshopping.EDM.tblcat>
+@{
+    ViewBag.Title = "displaycategory";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="outer-w3-agile mt-3">
+    <h4 class="tittle-w3-agileits mb-4">Basic Table</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Category ID</th>
+                <th scope="col">Category Name</th>
+                </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td >@item.cat_id</td>
+                    <td>@item.cat_name</td>
+                    
+                </tr>
+
+         
+            }
+
+            
+        </tbody>
+    </table>
+</div>
+
+
+}
+

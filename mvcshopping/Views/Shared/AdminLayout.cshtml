@@ -71,10 +71,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="cards.html">Cards</a>
+                            @Html.ActionLink("Add Cat/Sub Cat","categories","Admin")
+                         
                         </li>
                         <li>
-                            <a href="carousels.html">Carousels</a>
+                            @Html.ActionLink("Manage Category", "displaycategory", "Admin")
                         </li>
                         <li>
                             <a href="forms.html">Forms</a>

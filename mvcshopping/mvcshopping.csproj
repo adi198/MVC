@@ -311,6 +311,7 @@
     <Content Include="Views\Admin\Dashboard.cshtml" />
     <Content Include="Views\Main\AdminLogin.cshtml" />
     <Content Include="Views\Admin\categories.cshtml" />
+    <Content Include="Views\Admin\displaycategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
